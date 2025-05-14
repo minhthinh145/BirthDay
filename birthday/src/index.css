@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+
+/* index.css */
+
+html, body {
+        font-family: "Space Grotesk", sans-serif;
+            color: f3f4f6;
+  background: linear-gradient(to bottom right, #f9a8d4, #fef3c7);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+@layer utilities{
+    @keyframes blink{
+        0% , 100% {
+            opacity: 1;
+        }
+        50%{
+            opacity: 0;
+        }
+    }
+
+    .animate-blink{
+        animation: blink 0.8s step-end infinite;
+    }
+
+
+
+    @keyframes loading{
+        0%{
+            transform: translateX(-100%);
+        }
+        100%{
+            transform: translateX(250%);
+        }
+    }
+
+    .animate-loading-bar{
+        animation: loading 0.8s ease infinite;
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible{
+    opacity : 1;
+    transform : translateY(0);
+}
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.4); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-sparkle {
+  animation:
+    sparkle 2s ease-in-out infinite,
+    float 3s ease-in-out infinite;
+}
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+/* Thêm vào file CSS của bạn */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-typing {
+  display: inline-block;
+  white-space: normal; /* Allow text to wrap */
+  overflow: hidden;
+  width: 0;
+  animation: typing 4s steps(40) 1s 1 normal both;
+  word-wrap: break-word; /* Ensure words break correctly */
+}
+.fireworks {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.firework {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ff6b6b;
+  border-radius: 50%;
+  animation: explode 1s infinite ease-in-out;
+}
+
+.firework:nth-child(1) {
+  left: 50%;
+  animation-delay: 0s;
+  animation-duration: 2s;
+}
+
+.firework:nth-child(2) {
+  left: 40%;
+  animation-delay: 0.5s;
+  animation-duration: 2.5s;
+}
+
+.firework:nth-child(3) {
+  left: 60%;
+  animation-delay: 1s;
+  animation-duration: 3s;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(4) translate(0, -50px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0;
+  }
+}
