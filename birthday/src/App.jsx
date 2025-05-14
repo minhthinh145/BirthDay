@@ -7,9 +7,9 @@ import { Final } from "./component/final";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Birthday">
       <Routes>
-        <Route path="/" element={<LoadingScreen />} />{" "}
+        <Route path="/" element={<LoadingScreen />} />
         <Route path="/main" element={<MainFile />} />
         <Route path="/final" element={<Final />} />
       </Routes>
