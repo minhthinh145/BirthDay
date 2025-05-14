@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import birthdayCake from "../assets/birthday.GIF"; // Đảm bảo đường dẫn này chính xác
+import birthdayCake from "../assets/birthday.GIF"; 
 
 export const Final = () => {
   const [text, setText] = useState("");
@@ -31,13 +31,12 @@ export const Final = () => {
   const handleButtonClick = () => {
     setShowSecondChat(true);
 
-    // Kích hoạt hiệu ứng confetti bằng window.confetti
     if (window.confetti) {
       window.confetti({
-        particleCount: 5000, // Số lượng mảnh confetti
-        spread: 70, // Độ lan tỏa
-        origin: { y: 0.6 }, // Vị trí xuất phát (giữa màn hình)
-        colors: ["#f9a8d4", "#fef3c7", "#ff6f61"], // Màu sắc giống gradient của nút
+        particleCount: 5000,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ["#f9a8d4", "#fef3c7", "#ff6f61"],
       });
     }
   };
@@ -46,36 +45,37 @@ export const Final = () => {
     ? "Háp pi bớt đay :))))))"
     : showButtonAndBox2
     ? "Ấn nút bên kia đi thì đc đọc tiếp, hê hê"
-    : "\u00A0"; // Giữ non-breaking space để có chiều cao tối thiểu ban đầu
+    : "\u00A0";
 
   return (
     <div className="flex flex-col md:flex-row h-screen">
-      {/* Left half (text boxes) */}
-      <div className="w-full md:w-1/2 p-4 md:p-10 flex flex-col md:justify-center">
+      <div className="w-full md:w-1/2 p-4 md:p-10 flex flex-col justify-center items-center">
         <div
           className="mb-4 p-3 md:p-4 bg-white border-2 border-gray-300 rounded-lg text-sm md:text-base"
           style={{
-            width: "fit-content", // Dãn ngang theo nội dung
-            maxWidth: "100%", // Không vượt quá màn hình
-            minWidth: "0", // Cho phép dãn tự do
+            width: "fit-content",
+            maxWidth: "100%",
+            minWidth: "0",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <span
-            className="block"
+            className="block text-center"
             style={{
-              whiteSpace: "normal", // Cho phép text xuống dòng tự nhiên
-              overflowWrap: "break-word", // Ép xuống dòng tại từ
-              lineHeight: "1.5", // Khoảng cách dòng dễ nhìn
+              whiteSpace: "normal",
+              overflowWrap: "break-word",
+              lineHeight: "1.5",
             }}
           >
             {text}
           </span>
         </div>
 
-        {/* Box 2: Giới hạn chiều cao và căn giữa nội dung */}
-        <div className="p-3 md:p-4 bg-white border-2 border-gray-300 rounded-lg text-sm md:text-base w-full h-[70px] md:h-[80px] flex items-center overflow-hidden">
+        <div className="p-3 md:p-4 bg-white border-2 border-gray-300 rounded-lg text-sm md:text-base w-full h-[70px] md:h-[80px] flex justify-center items-center overflow-hidden">
           <span
-            className={`w-full ${
+            className={`w-full text-center ${
               showSecondChat || showButtonAndBox2 ? "animate-typing" : ""
             }`}
           >
@@ -84,7 +84,6 @@ export const Final = () => {
         </div>
       </div>
 
-      {/* Right half (GIF and button) */}
       <div className="w-full md:w-1/2 p-4 md:p-10 flex flex-col md:justify-center items-center">
         <img
           src={birthdayCake}

@@ -6,7 +6,7 @@ const icons = [GiCakeSlice, FaBirthdayCake, FaRegSmileWink];
 export const CaDongIcon = () => {
   const items = Array.from({ length: 40 }, (_, i) => {
     const Icon = icons[Math.floor(Math.random() * icons.length)];
-    const size = Math.floor(Math.random() * 30 + 20); // 20px – 50px
+    const size = Math.floor(Math.random() * 30 + 20);
 
     const style = {
       top: `${Math.random() * 100}%`,

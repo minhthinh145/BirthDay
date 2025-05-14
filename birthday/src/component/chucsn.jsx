@@ -18,7 +18,7 @@ export const LoiChuc = () => {
       if (index > fullText.length) {
         clearInterval(interval);
         setTimeout(() => {
-          setDone(true); // Sau khi gõ xong, cho phép hiện nút
+          setDone(true);
         }, 300);
       }
     }, 100);
@@ -28,21 +28,19 @@ export const LoiChuc = () => {
 
   return (
     <div className="grid grid-cols-1 items-center justify-center min-h-screen px-4 z-50">
-      {/* Container chứa text và button */}
       <div className="flex flex-col items-center text-center p-4 bg-pink-100 shadow-lg rounded-lg border-2 border-pink-500 w-auto max-w-[90%] mx-auto">
         <h1
           className="text-xl sm:text-2xl font-semibold text-gray-800 animate-typing"
           style={{
-            whiteSpace: "normal", // Cho phép text xuống dòng tự nhiên
-            overflowWrap: "break-word", // Ép xuống dòng tại từ
-            width: "100%", // Đảm bảo text không vượt quá container
-            textAlign: "center", // Căn giữa text
+            whiteSpace: "normal",
+            overflowWrap: "break-word",
+            width: "100%",
+            textAlign: "center",
           }}
         >
           {text}
         </h1>
 
-        {/* Nút nằm bên trong div, hiển thị ngay bên dưới text */}
         {done && (
           <button
             className="mt-2 px-6 py-2 text-base sm:text-lg rounded-full bg-gradient-to-r from-[#fef3c7] to-[#f9a8d4] font-semibold shadow-md hover:from-[#f9a8d4] hover:to-[#fef3c7] transition text-black"

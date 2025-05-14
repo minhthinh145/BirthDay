@@ -87,58 +87,9 @@ html, body {
 
 .animate-typing {
   display: inline-block;
-  white-space: normal; /* Allow text to wrap */
+  white-space: normal;
   overflow: hidden;
   width: 0;
   animation: typing 4s steps(40) 1s 1 normal both;
-  word-wrap: break-word; /* Ensure words break correctly */
-}
-.fireworks {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-
-.firework {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: #ff6b6b;
-  border-radius: 50%;
-  animation: explode 1s infinite ease-in-out;
-}
-
-.firework:nth-child(1) {
-  left: 50%;
-  animation-delay: 0s;
-  animation-duration: 2s;
-}
-
-.firework:nth-child(2) {
-  left: 40%;
-  animation-delay: 0.5s;
-  animation-duration: 2.5s;
-}
-
-.firework:nth-child(3) {
-  left: 60%;
-  animation-delay: 1s;
-  animation-duration: 3s;
-}
-
-@keyframes explode {
-  0% {
-    transform: scale(1) translate(0, 0);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(4) translate(0, -50px);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(1) translate(0, 0);
-    opacity: 0;
-  }
+  word-wrap: break-word;
 }

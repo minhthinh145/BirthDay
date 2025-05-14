@@ -1,5 +1,5 @@
 export const SparkleEffect = () => {
-  const colors = ["#111111", "#4b5563", "#1f2937"]; // Tương phản với nền hồng/vàng
+  const colors = ["#111111", "#4b5563", "#1f2937"];
 
   const sparkles = Array.from({ length: 30 }, (_, i) => ({
     id: i,
