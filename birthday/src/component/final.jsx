@@ -52,8 +52,17 @@ export const Final = () => {
     <div className="flex flex-col md:flex-row h-screen">
       {/* Left half (text boxes) */}
       <div className="w-full md:w-1/2 p-4 md:p-10 flex flex-col md:justify-center">
-        <div className="mb-4 p-3 md:p-4 bg-white border-2 border-gray-300 rounded-lg text-sm md:text-base w-full h-auto">
-          <span className="block">{text}</span>
+        <div className="mb-4 p-3 md:p-4 bg-white border-2 border-gray-300 rounded-lg text-sm md:text-base w-full max-w-[90%]">
+          <span
+            className="block"
+            style={{
+              whiteSpace: "normal", // Cho phép text xuống dòng tự nhiên
+              overflowWrap: "break-word", // Ép xuống dòng tại từ
+              lineHeight: "1.5", // Khoảng cách dòng dễ nhìn
+            }}
+          >
+            {text}
+          </span>
         </div>
 
         {/* Box 2: Giới hạn chiều cao và căn giữa nội dung */}
