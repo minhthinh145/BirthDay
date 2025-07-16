@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import birthdayCake from "../assets/birthday.GIF"; 
+import confetti from "canvas-confetti";
+import birthdayCake from "../assets/birthday.GIF";
 
 export const Final = () => {
   const [text, setText] = useState("");
@@ -7,7 +8,7 @@ export const Final = () => {
   const [showButtonAndBox2, setShowButtonAndBox2] = useState(false);
 
   const fullText =
-    "Hmm hồi cuối năm ngoái, t cứ tưởng t với m chắc hết chơi với nhau r. Nhưng mà hông, tới giờ t vẫn còn một đứa bạn ở đây ( nhìn khá là ngu ), vẫn chill chill này nọ. Vẫn có ng để t code ra quả web CMSN xấu lòi mắt này :)))";
+    "Ây, T k cố ý bơ tin nhắn m đâu, t cần 1 chút thời gian để deploy cái quỷ này :)))";
 
   useEffect(() => {
     let index = 0;
@@ -31,20 +32,18 @@ export const Final = () => {
   const handleButtonClick = () => {
     setShowSecondChat(true);
 
-    if (window.confetti) {
-      window.confetti({
-        particleCount: 5000,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ["#f9a8d4", "#fef3c7", "#ff6f61"],
-      });
-    }
+    confetti({
+      particleCount: 5000,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ["#f9a8d4", "#fef3c7", "#ff6f61"],
+    });
   };
 
   const box2TextContent = showSecondChat
     ? "Háp pi bớt đay :))))))"
     : showButtonAndBox2
-    ? "Ấn nút bên kia đi thì đc đọc tiếp, hê hê"
+    ? "Ấn nút bên kia đi. Ấn đê ..."
     : "\u00A0";
 
   return (
